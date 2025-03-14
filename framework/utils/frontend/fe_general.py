@@ -25,7 +25,6 @@ class FEGeneral:
     configured_wait = run_opts['configured_wait']
     implicit_wait = run_opts['implicit_wait']
     headless = run_opts['headless']
-    temp_dir = None
     driver = None
 
     def __init__(self):
