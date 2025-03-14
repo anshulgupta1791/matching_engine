@@ -1,11 +1,11 @@
 from pathlib import Path
 import yaml
 from selenium.common import NoSuchElementException
-from selenium.webdriver.ie.webdriver import WebDriver
 from framework import ROOT_DIR
+from framework.utils.frontend.fe_general import FEGeneral as fe_general
 from framework.utils.frontend.matching_engine_home.matching_engine_home_config import (
     MatchingEngineHomeConfig as me_config)
-from framework.utils.frontend.fe_general import FEGeneral as fe_general
+
 
 class MatchingEngineHome:
     config = me_config
@@ -14,7 +14,7 @@ class MatchingEngineHome:
         config_data = yaml.safe_load(file)
     url = config_data.get('url')
 
-    def __init__(self, driver: WebDriver):
+    def __init__(self, driver):
         """
         __init__()
 
@@ -22,7 +22,7 @@ class MatchingEngineHome:
         :param driver: The WebDriver instance to use for browser interactions.
         """
         self.driver = driver
-        self.fe_general = fe_general(driver)
+        self.fe_general = fe_general()
 
     def navigate_to_matching_engine_home(self):
         """
@@ -32,7 +32,6 @@ class MatchingEngineHome:
         :return: None
         """
         self.fe_general.go_to_page()
-        # self.fe_general.verify_element_present(self.url, page_url=True)
 
     def click_header_option(self, header_option):
         """

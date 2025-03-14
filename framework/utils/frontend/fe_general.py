@@ -28,15 +28,13 @@ class FEGeneral:
     temp_dir = None
     driver = None
 
-    def __init__(self, temp_dir=None):
+    def __init__(self):
         """
         __init__()
 
         :Description: Initialize the FEGeneral class with the specified temporary directory.
-        :param temp_dir: The temporary directory to store screenshots and other files.
         """
         self.driver = None
-        self.temp_dir = temp_dir
 
     # Browser related functions
     def open_browser(self):
@@ -80,14 +78,15 @@ class FEGeneral:
         return False
 
     # Navigation to URL
-    def go_to_page(self):
+    def go_to_page(self, driver=None):
         """
         open_browser_and_navigate()
 
         :Description: Open a Chrome browser window and navigate to the specified URL if provided.
         :return: None
         """
-        self.open_browser()
+        if not self.driver:
+            self.open_browser()
         self.driver.get(self.url)
 
     # Element interaction functions
@@ -136,7 +135,10 @@ class FEGeneral:
         """
         try:
             element = self.find_element(locator)
+            # By using below command, we can scroll the element into view with JavaScript
             self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+            # By using below command, we can scroll the element into view with Actions Class
+            # ActionChains(self.driver).move_to_element(element).perform()
         except TimeoutException:
             print(f"Timeout while waiting for element: {locator}")
 
