@@ -1,0 +1,24 @@
+<!--
+This is the environment.xml file for Allure configuration.
+It provides environment information for Allure reports.
+The file uses a custom namespace "urn:model.commons.qatools.ru".
+-->
+
+<ns0:environment xmlns:ns0="urn:model.commons.qatools.ru">
+    <parameter name="env">
+        <key>Test Environment</key>
+        <value>matching_engine_test</value>
+    </parameter>
+    <parameter name="os">
+        <key>OS</key>
+        <value>Darwin 16.7.0</value>
+    </parameter>
+    <parameter name="os_windows">
+        <key>OS</key>
+        <value>Windows 11</value>
+    </parameter>
+    <parameter name="browser">
+        <key>Browser</key>
+        <value>chrome</value>
+    </parameter>
+</ns0:environment>

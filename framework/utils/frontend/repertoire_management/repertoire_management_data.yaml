@@ -1,0 +1,8 @@
+# This configuration file is used to dynamically locate and interact with elements on the Repertoire Management Module
+# page.
+# Reason for using XPath: Precise element selection for complex XML structures.
+repertoire_management_data:
+  page_title: "Repertoire Management Module – Matching Engine by Spanish Point Technologies Ltd."
+  additional_features:
+    title: "//*[normalize-space()='Additional Features']"
+    sub_list: "(//*[@class='vc_tta-title-text'][normalize-space()='{}'])[1]"

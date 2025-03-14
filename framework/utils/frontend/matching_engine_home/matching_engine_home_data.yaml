@@ -1,0 +1,5 @@
+# This configuration file is used to dynamically locate and interact with elements on the Matching Engine home page.
+# Reason for using XPath: Precise element selection for complex XML structures.
+matching_engine_home_data:
+  page_title: "Matching Engine by Spanish Point Technologies Ltd."
+  header_options: "//*[normalize-space()='{}']"

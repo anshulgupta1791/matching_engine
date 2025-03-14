@@ -1,0 +1,9 @@
+config: #Config Test Runs and generic functions
+  run_opts: # Control parameters for the run
+    url: 'https://www.matchingengine.com/'
+    current_env: 'qa'
+    current_driver: 'chrome'
+    configured_wait: 0.5
+    implicit_wait: 10
+    flaky_rerun: 2
+    headless: false
